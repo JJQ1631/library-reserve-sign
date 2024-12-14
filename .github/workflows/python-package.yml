@@ -1,4 +1,4 @@
-name: Your Github Workflow name
+name: library 
 on:
   workflow_dispatch:
   schedule:
@@ -7,12 +7,12 @@ on:
 
 jobs:
   run-python-script:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu20.04 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
         with:
-          python-version: '3.8.0'
+          python-version: '3.9.1'
       - run: pip install -t . -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
       - run: python libs/reserve.py
       
